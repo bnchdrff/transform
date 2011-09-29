@@ -412,7 +412,7 @@
 	function toPx(elem, val) {
 		var parts = rfxnum.exec($.trim(val));
 		
-		if (parts[3] && parts[3] !== 'px') {
+		if (parts && parts[3] && parts[3] !== 'px') {
 			var prop = 'paddingBottom',
 				orig = $.style( elem, prop );
 				
@@ -893,7 +893,7 @@
 					start = $.angle.toDegree(start);
 				} else if (!$.cssNumber[fx.prop]) {
 					parts = rfxnum.exec($.trim(start));
-					if (parts[3] && parts[3] !== 'px') {
+					if (parts && parts[3] && parts[3] !== 'px') {
 						if (parts[3] === '%') {
 							start = parseFloat( parts[2] ) / 100 * transform['safeOuter' + (i ? 'Height' : 'Width')]();
 						} else {
